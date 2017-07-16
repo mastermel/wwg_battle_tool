@@ -1,0 +1,23 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "jest": true,
+    },
+    "plugins": [
+        "jest",
+        "react",
+        "react-native",
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+      "react/prop-types": 1,
+      "react-native/no-unused-styles": 1,
+      "react-native/split-platform-components": 1,
+      "react-native/no-inline-styles": 1,
+      "react-native/no-color-literals": 2,
+    }
+}
