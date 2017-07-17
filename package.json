@@ -4,13 +4,19 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-jest": "20.0.1",
+    "babel-preset-react-native": "1.9.1",
     "eslint": "^4.2.0",
     "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-react-native": "^2.3.2",
+    "jest": "20.0.1",
+    "jest-enzyme": "^3.5.3",
     "jest-expo": "~18.0.0",
-    "react-native-scripts": "0.0.40",
-    "react-test-renderer": "16.0.0-alpha.12"
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "15.5.4",
+    "sinon": "^2.3.8",
+    "standard": "^10.0.2"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -18,15 +24,18 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "test-debug": "node --debug-brk ./node_modules/jest/bin/jest --runInBand"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "preset": "jest-expo"
   },
   "dependencies": {
+    "enzyme": "^2.9.1",
     "expo": "^18.0.3",
-    "react": "16.0.0-alpha.12",
-    "react-native": "^0.45.1",
-    "react-native-router-flux": "^4.0.0-beta.7"
+    "prop-types": "^15.5.10",
+    "react": "15.6.1",
+    "react-native": "0.42.0"
   }
 }

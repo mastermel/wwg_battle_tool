@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { backgroundColor } from './shared/styles';
+import { backgroundColor } from './shared/Styles';
 
 export default class App extends React.Component {
   render() {
