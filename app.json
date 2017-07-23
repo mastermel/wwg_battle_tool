@@ -1,5 +1,4 @@
 {
-  "expo": {
-    "sdkVersion": "18.0.0"
-  }
+  "name": "wwg_battle_tool",
+  "displayName": "wwg_battle_tool"
 }
