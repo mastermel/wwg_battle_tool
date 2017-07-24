@@ -20,6 +20,7 @@ export default class App extends Component {
         <ConnectedRouter>
           <Scene key='root'
             navigationBarStyle={styles.navigationBarStyle}
+            navBarButtonColor={font.color}
             titleStyle={styles.titleStyle}
           >
             <Scene key='home'
