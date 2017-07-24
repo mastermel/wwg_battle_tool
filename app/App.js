@@ -5,6 +5,8 @@ import { Router, Scene, ActionConst } from 'react-native-router-flux';
 
 import { appReducer } from './Reducers/index';
 
+import { navColor, font } from './Shared/Styles';
+
 import Home from './Scenes/Home/index';
 import Units from './Scenes/Units/index';
 
@@ -16,12 +18,33 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter>
-          <Scene key='root'>
-            <Scene key='home' component={Home} title='Home' type={ActionConst.REPLACE} initial />
-            <Scene key='units' component={Units} title='Units' />
+          <Scene key='root'
+            navigationBarStyle={styles.navigationBarStyle}
+            titleStyle={styles.titleStyle}
+          >
+            <Scene key='home'
+              initial
+              title='Home'
+              component={Home}
+              type={ActionConst.REPLACE}
+            />
+            <Scene key='units'
+              title='Units'
+              component={Units}
+            />
           </Scene>
         </ConnectedRouter>
       </Provider>
     );
   }
 }
+
+const styles = {
+  navigationBarStyle: {
+    backgroundColor: navColor,
+  },
+  
+  titleStyle: {
+    color: font.color,
+  },
+};

@@ -2,22 +2,58 @@
     "parser": "babel-eslint",
     "env": {
         "browser": true,
-        "jest": true
+        "jest": true,
+        "jest/globals": true
     },
     "plugins": [
         "jest",
         "react",
-        "react-native"
+        "react-native",
+        "babel"
     ],
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
     ],
     "rules": {
-      "react/prop-types": 1,
       "react-native/no-unused-styles": 1,
       "react-native/split-platform-components": 1,
       "react-native/no-inline-styles": 1,
-      "react-native/no-color-literals": 2
+      "react-native/no-color-literals": 2,
+      "comma-dangle": ["warn", "always-multiline"],
+      "constructor-super": "error",
+      "indent": ["error", 2, {"SwitchCase": 1}],
+      "linebreak-style": ["error", "unix"],
+      "no-class-assign": "error",
+      "no-const-assign": "error",
+      "no-console": "off",
+      "no-dupe-class-members": "error",
+      "no-this-before-super": "error",
+      "no-unused-vars": ["error", {"args": "none"}],
+      "no-var": "warn",
+      "prefer-spread": "warn",
+      "prefer-template": "warn",
+      "quotes": ["error", "single"],
+      "require-yield": "error",
+      "semi": "error",
+      "babel/new-cap": 1,
+      "babel/no-invalid-this": 1,
+      "react/jsx-closing-bracket-location": "warn",
+      "react/jsx-curly-spacing": "warn",
+      "react/jsx-max-props-per-line": ["warn", {"maximum": 2}],
+      "react/jsx-no-duplicate-props": "warn",
+      "react/jsx-no-undef": "warn",
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/jsx-wrap-multilines": "warn",
+      "react/no-direct-mutation-state": "warn",
+      "react/prop-types": "warn",
+      "react/react-in-jsx-scope": "error",
+      "react/self-closing-comp": "warn",
+      "react/sort-comp": "warn",
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/valid-expect": "error"
     }
 }

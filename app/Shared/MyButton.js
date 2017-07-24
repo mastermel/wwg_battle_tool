@@ -21,8 +21,7 @@ class MyButton extends React.Component {
 
 MyButton.propTypes = {
   title: string.isRequired,
-  onPress: func
-}
-
+  onPress: func,
+};
 
 export default MyButton;
