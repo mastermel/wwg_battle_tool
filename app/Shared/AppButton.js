@@ -5,7 +5,7 @@ import { font } from './Styles';
 
 const { string, func } = PropTypes;
 
-class MyButton extends React.Component {
+class AppButton extends React.Component {
   render() {
     const { title, onPress } = this.props;
     
@@ -19,9 +19,9 @@ class MyButton extends React.Component {
   }
 }
 
-MyButton.propTypes = {
+AppButton.propTypes = {
   title: string.isRequired,
   onPress: func,
 };
 
-export default MyButton;
+export default AppButton;

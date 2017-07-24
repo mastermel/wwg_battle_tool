@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, Text, Button, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { backgroundColor } from '../../Shared/Styles';
+
+import HeaderText from '../../Shared/HeaderText';
+import AppButton from '../../Shared/AppButton';
 
 export default class Units extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
+        <HeaderText style={styles.welcome}>
           Units Scene!
-        </Text>
-        <Button title='Home' onPress={() => { Actions.home(); }} />
+        </HeaderText>
+        <AppButton title='Home' onPress={() => { Actions.home(); }} />
       </View>
     );
   }

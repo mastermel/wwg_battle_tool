@@ -7,7 +7,7 @@ const font = {
   size: {
     normal: 14,
     medium: 16,
-    large: 20,
+    large: 30,
   },
 };
 

@@ -1,31 +1,39 @@
 import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, Text, Button, View } from 'react-native';
+import { StyleSheet,  View } from 'react-native';
 
 import { backgroundColor } from '../../Shared/Styles';
+import HeaderText from '../../Shared/HeaderText';
+import AppButton from '../../Shared/AppButton';
 
 export default class Main extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>
-          Home Scene!
-        </Text>
-        <Button title='Units' onPress={() => { Actions.units(); }} />
-        <Text>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View style={styles.outer}>
+        <HeaderText>
+          WWG Battle Tool
+        </HeaderText>
+        <View style={styles.inner}>
+          <AppButton title='Units' onPress={() => { Actions.units(); }} />
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  outer: {
     flex: 1,
-    justifyContent: 'center',
+    flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: backgroundColor,
+  },
+  
+  inner: {
+    flex:1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: 60,
+    alignSelf: 'stretch',
   },
 });
