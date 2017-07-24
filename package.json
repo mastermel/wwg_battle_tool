@@ -4,11 +4,16 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"android": "~/Library/Android/sdk/tools/emulator -avd Nexus_5X_API_23",
+		"clear-cache": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf node_modules/ && yarn cache clean && yarn install",
 		"test": "jest"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.12",
-		"react-native": "0.46.4"
+		"react-native": "0.46.4",
+		"react-native-router-flux": "^4.0.0-beta.12",
+		"react-redux": "^5.0.5",
+		"redux": "^3.7.2"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",
