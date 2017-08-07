@@ -1,30 +1,53 @@
 import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { StyleSheet, View } from 'react-native';
+import { arrayOf } from 'prop-types';
+import Unit from '../../Schemas/Unit';
 
-import { backgroundColor } from '../../Shared/Styles';
+import { backgroundColor, font } from '../../Shared/Styles';
 
-import HeaderText from '../../Shared/HeaderText';
+import AppText from '../../Shared/AppText';
 import AppButton from '../../Shared/AppButton';
 
 export default class Units extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <HeaderText style={styles.welcome}>
-          Units Scene!
-        </HeaderText>
+      <View style={styles.screen}>
+        { this.renderUnits() }
+        
         <AppButton title='Home' onPress={() => { Actions.home(); }} />
       </View>
     );
   }
+  
+  renderUnits() {
+    const { units } = this.props;
+    
+    if (units && units.length > 0) {
+      return (
+        <AppText style={font.presets.placeholder}>
+          You have {units.length} units. Good for you!
+        </AppText>
+      );
+    } else {
+      return (
+        <AppText style={[ font.presets.centered, font.presets.placeholder ]}>
+          No units entered yet.{'\n'}
+          You need to fill up your ranks!
+        </AppText>
+      );
+    }
+  }
 }
 
+Units.propTypes = {
+  units: arrayOf(Unit),
+};
+
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'column',
     backgroundColor: backgroundColor,
   },
 });

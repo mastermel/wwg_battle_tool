@@ -5,8 +5,14 @@ import { font } from './Styles';
 
 class AppText extends React.Component {
   render() {
+    const style = {
+      color: font.color,
+      fontSize: font.size.normal,
+      ...this.props.style,
+    };
+    
     return (
-      <Text style={{ color: font.color, fontSize: font.size.normal }}>
+      <Text style={style}>
         {this.props.children}
       </Text>
     );
@@ -15,6 +21,11 @@ class AppText extends React.Component {
 
 AppText.propTypes = {
   children: any,
+  style: any,
+};
+
+AppText.defaultProps = {
+  style: {},
 };
 
 export default AppText;

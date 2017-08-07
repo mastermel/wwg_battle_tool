@@ -50,7 +50,14 @@
       "react/prop-types": "warn",
       "react/react-in-jsx-scope": "error",
       "react/self-closing-comp": "warn",
-      "react/sort-comp": "warn",
+      "react/sort-comp": [1, {
+        order: [
+          'static-methods',
+          'lifecycle',
+          'render',
+          'everything-else'
+        ] }
+      ],
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
       "jest/no-identical-title": "error",

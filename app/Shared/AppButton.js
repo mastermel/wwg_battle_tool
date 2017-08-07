@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from 'react-native';
-import PropTypes from 'prop-types';
-import { font } from './Styles';
+import { string, func } from 'prop-types';
+import Button from 'apsl-react-native-button';
+import { StyleSheet } from 'react-native';
 
-const { string, func } = PropTypes;
+import { font, navColor } from './Styles';
 
 class AppButton extends React.Component {
   render() {
@@ -11,10 +11,12 @@ class AppButton extends React.Component {
     
     return (
       <Button
-        color={font.color}
-        title={title}
+        style={styles.button}
+        textStyle={styles.buttonText}
         onPress={onPress}
-      />
+      >
+        {title}
+      </Button>
     );
   }
 }
@@ -23,5 +25,19 @@ AppButton.propTypes = {
   title: string.isRequired,
   onPress: func,
 };
+
+const styles = StyleSheet.create({
+  button: {
+    width: '60%',
+    alignSelf: 'center',
+    backgroundColor: navColor,
+  },
+  
+  buttonText: {
+    color: font.color,
+    fontSize: font.size.medium,
+    fontWeight: 'bold',
+  },
+});
 
 export default AppButton;
